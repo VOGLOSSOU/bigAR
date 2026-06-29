@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import {
   ShieldCheck,
   Award,
@@ -53,8 +54,19 @@ export default function AProposPage() {
   return (
     <div className="bg-[#F8FAFC] min-h-screen">
       {/* Header */}
-      <div className="hero-gradient text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative text-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/a-propos-bg.jpeg"
+            alt="Moteurs industriels SVMI"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={85}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0f1f4a]/92 via-[#1E3A8A]/85 to-[#1E3A8A]/70" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
           <p className="text-xs font-semibold text-blue-200 uppercase tracking-widest mb-2">Notre histoire</p>
           <h1 className="text-3xl md:text-4xl font-extrabold mb-3">À propos de SVMI</h1>
           <p className="text-blue-200 max-w-2xl">
