@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ShieldCheck,
   Award,
@@ -87,19 +88,30 @@ export default function AProposPage() {
               </Link>
             </div>
 
-            {/* Illustration */}
-            <div className="bg-gradient-to-br from-[#1E3A8A]/5 to-[#1E3A8A]/10 rounded-2xl p-10 flex items-center justify-center border border-[#1E3A8A]/10">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-[#1E3A8A] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Cog size={48} className="text-white" />
+            {/* Badge agrément officiel + identité */}
+            <div className="flex flex-col gap-6">
+              {/* Badge VHU agréé */}
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 flex flex-col items-center justify-center gap-4">
+                <Image
+                  src="/img-accueil.jpg"
+                  alt="Centre VHU agréé — République Française"
+                  width={280}
+                  height={126}
+                  className="object-contain"
+                />
+                <p className="text-sm text-slate-500 text-center">
+                  Société officiellement agréée par la République Française,
+                  garantissant traçabilité et conformité de nos prestations.
+                </p>
+              </div>
+              {/* Identité */}
+              <div className="bg-[#1E3A8A] rounded-2xl p-6 text-white flex flex-col items-center text-center gap-2">
+                <div className="w-14 h-14 bg-white/15 rounded-xl flex items-center justify-center mb-1">
+                  <Cog size={30} className="text-white" />
                 </div>
-                <p className="text-5xl font-extrabold text-[#1E3A8A] mb-1">SVMI</p>
-                <p className="text-slate-500 font-medium">Société de Vente de Moteurs Industriels</p>
-                <div className="mt-6 flex items-center justify-center gap-2">
-                  <span className="text-2xl">🇫🇷</span>
-                  <p className="text-sm font-semibold text-slate-600">Société Française Agréée</p>
-                </div>
-                <p className="text-sm text-slate-400 mt-1">Vénissieux, Métropole de Lyon</p>
+                <p className="text-2xl font-extrabold tracking-wide">SVMI</p>
+                <p className="text-blue-200 text-sm">Société de Vente de Moteurs Industriels</p>
+                <p className="text-blue-300 text-xs mt-1">150 Avenue Viviani · 69200 Vénissieux</p>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Zap,
@@ -97,23 +98,23 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* ─── HERO ─── */}
-      <section className="hero-gradient text-white relative overflow-hidden">
-        {/* subtle pattern */}
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)",
-            backgroundSize: "24px 24px",
-          }}
-        />
+      <section className="text-white relative overflow-hidden">
+        {/* Photo d'atelier industriel en arrière-plan */}
+        <div className="absolute inset-0">
+          <Image
+            src="/behind-hero.jpg"
+            alt="Atelier industriel SVMI"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={85}
+          />
+          {/* Overlay dégradé bleu marine pour lisibilité du texte */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0f1f4a]/90 via-[#1E3A8A]/80 to-[#1E3A8A]/60" />
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <span className="inline-block badge bg-white/15 text-white border border-white/25 mb-5 text-xs">
-              🇫🇷 Société Française Agréée — Vénissieux (69)
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6 animate-fade-in-up">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6 animate-fade-in-up max-w-3xl">
               Votre spécialiste en
               <span className="block text-blue-200">moteurs industriels</span>
             </h1>
@@ -122,7 +123,7 @@ export default function HomePage() {
               toutes les technologies de motorisation pour répondre aux exigences
               les plus pointues de l'industrie française.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200 justify-center">
               <Link
                 href="/catalogue"
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#1E3A8A] font-bold px-7 py-3.5 rounded-lg hover:bg-blue-50 transition-colors"
@@ -136,7 +137,6 @@ export default function HomePage() {
                 Demander un devis
               </Link>
             </div>
-          </div>
         </div>
 
         {/* Wave */}

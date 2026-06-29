@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Cog, MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 
 const LINKS = [
@@ -37,9 +38,16 @@ export default function Footer() {
               Société agréée spécialisée dans la vente de moteurs industriels pour tous les secteurs.
               Expertise technique, conseil personnalisé et disponibilité immédiate.
             </p>
-            <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">
-              Société Française Agréée
-            </p>
+            {/* Badge agrément officiel */}
+            <div className="mt-3">
+              <Image
+                src="/img-accueil.jpg"
+                alt="Centre VHU agréé — République Française"
+                width={160}
+                height={72}
+                className="rounded-lg bg-white p-2 object-contain"
+              />
+            </div>
           </div>
 
           {/* Navigation */}
