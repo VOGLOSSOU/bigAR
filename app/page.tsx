@@ -126,15 +126,19 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200 justify-center">
               <Link
                 href="/catalogue"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#1E3A8A] font-bold px-7 py-3.5 rounded-lg hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white/15 border border-white/40 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-white/25 transition-colors"
               >
                 Voir le catalogue <ArrowRight size={18} />
               </Link>
+              {/* Devis — CTA principal mis en avant */}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/50 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-white/10 transition-colors"
+                className="relative inline-flex items-center justify-center gap-2 bg-white text-[#1E3A8A] font-extrabold px-8 py-3.5 rounded-lg hover:bg-blue-50 transition-colors shadow-xl shadow-black/20 text-base"
               >
-                Demander un devis
+                <span className="absolute -inset-1 rounded-xl bg-white animate-soft-pulse" />
+                <span className="relative flex items-center gap-2">
+                  Demander un devis gratuit <ArrowRight size={18} />
+                </span>
               </Link>
             </div>
         </div>

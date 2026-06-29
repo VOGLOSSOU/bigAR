@@ -53,8 +53,10 @@ export default function Navbar() {
 
           {/* CTA Desktop */}
           <div className="hidden md:flex items-center gap-3">
-            <Link href="/contact" className="btn-primary text-sm py-2 px-4">
-              Demander un devis
+            <Link href="/contact" className="relative inline-flex items-center gap-2 bg-[#1E3A8A] text-white font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-[#172e6e] transition-colors">
+              {/* anneau pulse discret */}
+              <span className="absolute -inset-0.5 rounded-lg bg-[#1E3A8A] animate-soft-pulse" />
+              <span className="relative">Demander un devis</span>
             </Link>
           </div>
 

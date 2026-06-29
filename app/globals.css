@@ -53,6 +53,20 @@ body {
   background: linear-gradient(135deg, #172e6e 0%, #1E3A8A 40%, #1d4ed8 100%);
 }
 
+@keyframes softPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0;   transform: scale(1.55); }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2.8s ease-in-out infinite;
+}
+
+.animate-soft-pulse-delay {
+  animation: softPulse 2.8s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
 .card-hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
